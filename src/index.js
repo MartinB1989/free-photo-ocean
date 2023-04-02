@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AxiosInterceptor from './interceptors/axios.interceptor';
+
+AxiosInterceptor()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
