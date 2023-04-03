@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/Home'
 import Search from './pages/Search';
 import Error404 from './pages/Error404';
+import Photo from './pages/Photo';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/search' element={<Search />} />
+          <Route path='/photo/:photo_id' element={<Photo />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </BrowserRouter>
