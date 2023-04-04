@@ -7,8 +7,13 @@ const photosService = () => {
     return data
   }
 
+  const getRandomPhoto = async () => {
+    const { data } = await axios.get(`${url}/photos/random`)
+    return data
+  }
   return {
-    getPhotoById
+    getPhotoById,
+    getRandomPhoto
   }
 }
 

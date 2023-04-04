@@ -26,7 +26,7 @@ const Photo = () => {
     <div>
       <div>
         <Searcher />
-        <img width="50%" src={currentPhoto.url} alt="alte" />
+        <img width="50%" src={currentPhoto.url} alt="alt" />
       </div>
     </div>
   )

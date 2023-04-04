@@ -3,6 +3,7 @@
   .card_main {
     position: relative;
     width: 100%;
+    cursor: pointer;
   }
   .cool_bg {
     position: absolute;

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import searchService from "../services/search";
+import photosService from "../services/photos";
 import Hero from "../components/Hero";
 import { useLocation } from "react-router-dom";
 import Searcher from "../components/Searcher";
 import Card from "../components/Card";
 import './../assets/style/pages/search.css'
+import { cutLongText } from "../utils/cutLongTexts";
 // import GridPhotos from "../components/GridPhotos";
 
 const Search = () => {
   const [dataPhotos, setDataPhotos] = useState([])
   const [photosColumn1, setPhotosColumn1] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  // const [bgImage, setBgImage] = useState()
 
   const { search } = useLocation()
 
@@ -33,12 +36,17 @@ const Search = () => {
             tags: element.tags?.map(tag => {
               return tag.title
             }),
-            description: element?.description,
+            description: cutLongText({ strText: element?.description, errorMessage: keyWord }),
             alt: element.alt_description
           }
         })
         setDataPhotos(photos)
       }
+      // const getPhotoForHero = async () => {
+      //   const photo = await photosService().getRandomPhoto()
+      //   setBgImage(photo)
+      // }
+      // getPhotoForHero()
       search()
     } catch (error) {
       console.log(error)
@@ -54,7 +62,7 @@ const Search = () => {
 
   return (
     <>
-      <Hero height="500px">
+      <Hero height="600px">
           <h1>Search a free image, no copyrights</h1>
           <Searcher />
       </Hero>
