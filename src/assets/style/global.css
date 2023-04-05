@@ -1,4 +1,13 @@
+/* .color1 { #6c788e };
+.color2 { #a6aec1 };
+.color3 { #cfd5e1 };
+.color4 { #ededf2 };
+.color5 { #fcfdff }; */
+
 html {
   font-size: 16;
   font-family: 'Montserrat', sans-serif;
+}
+body {
+  box-sizing: border-box;
 }

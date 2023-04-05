@@ -1,0 +1,38 @@
+.photo_container {
+  display: flex;
+  height: 600px;
+  padding: 24px;
+  background-color: #ededf2;
+  box-shadow: inset 0px 0px 36px -5px #6c788e;
+}
+.img_container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  border: 16px white solid;
+  padding: 24px 0;
+  box-shadow: inset 0px 0px 36px -5px #6c788e;
+}
+
+.img_container img {
+  height: 100%;
+}
+
+.image_info {
+  padding: 0 24px;
+}
+.image_description {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 400;
+}
+.download_btn {
+  float: left;
+  background-color:#6c788e ;
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
