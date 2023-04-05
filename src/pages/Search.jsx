@@ -66,7 +66,7 @@ const Search = () => {
           <h1>Search a free image, no copyrights</h1>
           <Searcher />
       </Hero>
-      <div className="cards">
+      <div className="search__cards">
         { isLoading ?
           <h1>Cargando</h1> :
           photosColumn1.map(photo => {

@@ -11,15 +11,15 @@ const Card = ({ srcImg, description, tags = [], alt='alt-description', id }) => 
     <div className='card_main' onClick={() => goTo(id)}>
       <div className='cool_bg'></div>
       <div className='card'>
-        <div className='img_container'>
+        <div className='card__img_container'>
           <img
             src={ srcImg }
             alt={alt}
           />
         </div>
-        <div className='text_container'>
-          <p className='description'>{ description }</p>
-          <div className='tags'>
+        <div className='card__text_container'>
+          <p className='card__description'>{ description }</p>
+          <div className='card__tags'>
             {
               tags.map((tag, i) => <Tag tag={tag} key={ 'card-' + i }/>)
             }

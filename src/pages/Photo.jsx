@@ -24,18 +24,18 @@ const Photo = () => {
   }, [photo_id])
 
   return (
-    <div>
-      <div>
+    <div className='photo__parent'>
+      <div className='photo__body'>
         <Searcher />
         <div className='photo_container'>
-          <div className='img_container'>
+          <div className='photo__img_container'>
             <img src={currentPhoto.url} alt="alt" />
           </div>
-          <div className='image_info'>
-            <p className='image_description'>
+          <div className='photo__image_info'>
+            <p className='photo__image_description'>
               { currentPhoto.description ?? 'There is not description for this image' }
             </p>
-            <a href='' className='download_btn'>Descargar</a>
+            <a href='' className='photo__download_btn'>Descargar</a>
           </div>
         </div>
       </div>

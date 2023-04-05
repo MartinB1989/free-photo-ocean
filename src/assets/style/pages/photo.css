@@ -1,11 +1,16 @@
+.photo__body {
+  margin-top: 12px;
+}
 .photo_container {
   display: flex;
   height: 600px;
   padding: 24px;
   background-color: #ededf2;
   box-shadow: inset 0px 0px 36px -5px #6c788e;
+  margin: 32px auto;
+  width: 90%;
 }
-.img_container {
+.photo__img_container {
   display: flex;
   justify-content: center;
   width: 50%;
@@ -14,19 +19,22 @@
   box-shadow: inset 0px 0px 36px -5px #6c788e;
 }
 
-.img_container img {
-  height: 100%;
+.photo__img_container img {
+  object-fit: contain;
+  width: 100%;
 }
 
-.image_info {
+.photo__image_info {
   padding: 0 24px;
+  width: 50%;
 }
-.image_description {
+.photo__image_description {
   font-family: 'Montserrat';
   font-size: 20px;
   font-weight: 400;
+  text-align: left;
 }
-.download_btn {
+.photo__download_btn {
   float: left;
   background-color:#6c788e ;
   color: white;
