@@ -7,6 +7,7 @@ import Searcher from "../components/Searcher";
 import Card from "../components/Card";
 import './../assets/style/pages/search.css'
 import { cutLongText } from "../utils/cutLongTexts";
+import Pagination from "../components/Pagination";
 // import GridPhotos from "../components/GridPhotos";
 
 const Search = () => {
@@ -83,6 +84,7 @@ const Search = () => {
           })
         }
       </div>
+      <Pagination />
     </>
   )
 }

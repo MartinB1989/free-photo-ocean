@@ -8,10 +8,14 @@ const searchService = () => {
       per_page: photosPerPage,
       page,
     }
-    const { data } = await axios.get(`${url}/search/photos`, {
+    const { data: { results, total, total_pages }} = await axios.get(`${url}/search/photos`, {
       params
     })
-    return data
+    return {
+      results,
+      total,
+      total_pages
+    }
   }
 
   return {
