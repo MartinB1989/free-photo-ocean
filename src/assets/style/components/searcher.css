@@ -1,38 +1,45 @@
-
 @media screen and (min-width: 280px) {
   .searcher_container {
+    display: flex;
+    justify-content: center;
     width: 100%;
-  }
-  .searcher_input, .search_button {
-    outline: none;
-    padding: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    border: 1px black solid;
+    height: 30px;
+    font-family: 'Montserrat';
+    margin: 0 auto;
   }
   .searcher_input {
-    width: 70%;
-    max-width: 600px;
-    height: 41px;
-    color: #363636;
+    flex: 75%;
+    outline: none;
+    font-size: 18px;
+    border: none;
   }
   .search_button {
-    width: 25%;
-    height: 50.6px;
-    background-color: black;
-    color: white;
-    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: #ffffff;
+    flex: 25%;
     cursor: pointer;
-    border-width: 2px;
+  }
+  .search_button span {
+    transform: translateY(-2px);
   }
 }
 @media screen and (min-width: 768px) {
-  .searcher_input {
-    width: 90%;
-    max-width: 500px;
+  .searcher_container {
+    width: 80%;
   }
-  .search_button {
-    width: 10%;
+}
+@media screen and (min-width: 1024px) {
+  .searcher_container {
+    width: 60%;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .searcher_container {
+    width: 50%;
   }
 }

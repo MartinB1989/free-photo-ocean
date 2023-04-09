@@ -1,5 +1,14 @@
 .photo__body {
-  margin-top: 12px;
+  margin: auto;
+}
+.photo__h1 {
+  color: #ffffff;
+}
+.photo__menu {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #6c788e;
 }
 .photo_container {
   display: flex;

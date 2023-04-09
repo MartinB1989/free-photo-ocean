@@ -67,7 +67,7 @@ const Search = () => {
   return (
     <>
       <Hero height="600px" bgImage={ bgImage }>
-          <h1>Search a free image, no copyrights</h1>
+          <h1 className="photo__h1">Search a free image, no copyrights</h1>
           <Searcher />
       </Hero>
       <Pagination
