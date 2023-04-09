@@ -1,0 +1,25 @@
+.pagination_main {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 50px;
+  padding: 8px;
+}
+
+.pagination_main .page_number {
+  color: #6c788e ;
+  padding: 0 8px;
+  margin: 8px 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pagination_main .active {
+  font-weight: 600;
+  transform: scale(1.2);
+}
+.pagination_main .inactive {
+  opacity: 0.5;
+}

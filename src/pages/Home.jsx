@@ -7,18 +7,18 @@ import photosService from "../services/photos";
 import { useState } from "react";
 
 const Home = () => {
-  // const [bgImage, setBgImage] = useState()
-  // useEffect(() => {
-  //   const getPhotoForHero = async () => {
-  //     const photo = await photosService().getRandomPhoto()
-  //     setBgImage(photo)
-  //   }
-  //   getPhotoForHero()
-  // },[])
+  const [bgImage, setBgImage] = useState()
+  useEffect(() => {
+    const getPhotoForHero = async () => {
+      const photo = await photosService().getRandomPhoto()
+      setBgImage(photo.urls.regular)
+    }
+    getPhotoForHero()
+  },[])
 
   return (
     <>
-      <Hero >
+      <Hero bgImage={ bgImage }>
         <h1 className="header">Search a free image, no copyrights</h1>
         <Searcher />
       </Hero>

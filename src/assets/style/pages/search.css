@@ -20,7 +20,7 @@
     padding: none;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1360px) {
   .search__cards {
     grid-template-columns: repeat(2, 1fr);
   }

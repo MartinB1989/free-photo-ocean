@@ -8,13 +8,15 @@ import Card from "../components/Card";
 import './../assets/style/pages/search.css'
 import { cutLongText } from "../utils/cutLongTexts";
 import Pagination from "../components/Pagination";
+import paginate from "../utils/pagination";
 // import GridPhotos from "../components/GridPhotos";
 
 const Search = () => {
   const [dataPhotos, setDataPhotos] = useState([])
   const [photosColumn1, setPhotosColumn1] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-  // const [bgImage, setBgImage] = useState()
+  const [paginateFor, setPaginateFor] = useState({})
+  const [bgImage, setBgImage] = useState()
 
   const { search } = useLocation()
 
@@ -26,7 +28,7 @@ const Search = () => {
     try {
       setIsLoading(true)
       const search = async () => {
-        const { results } = await searchService().searchPhotos({
+        const { results, total, total_pages } = await searchService().searchPhotos({
           keyWord,
           page
         })
@@ -42,12 +44,13 @@ const Search = () => {
           }
         })
         setDataPhotos(photos)
+        setPaginateFor(paginate(page, total, total_pages))
       }
-      // const getPhotoForHero = async () => {
-      //   const photo = await photosService().getRandomPhoto()
-      //   setBgImage(photo)
-      // }
-      // getPhotoForHero()
+      const getPhotoForHero = async () => {
+        const photo = await photosService().getRandomPhoto()
+        setBgImage(photo.urls.regular)
+      }
+      getPhotoForHero()
       search()
     } catch (error) {
       console.log(error)
@@ -63,10 +66,20 @@ const Search = () => {
 
   return (
     <>
-      <Hero height="600px">
+      <Hero height="600px" bgImage={ bgImage }>
           <h1>Search a free image, no copyrights</h1>
           <Searcher />
       </Hero>
+      <Pagination
+        keyWord={ keyWord }
+        currentPage={ paginateFor.currentPage }
+        totalItems={ paginateFor.totalItems }
+        hasPrev={ paginateFor.hasPrev }
+        hasNext={ paginateFor.hasNext }
+        nextPage={ paginateFor.nextPage }
+        prevPage={ paginateFor.prevPage }
+        totalPages={ paginateFor.totalPages }
+      />
       <div className="search__cards">
         { isLoading ?
           <h1>Cargando</h1> :
@@ -84,7 +97,16 @@ const Search = () => {
           })
         }
       </div>
-      <Pagination />
+      <Pagination
+        keyWord={ keyWord }
+        currentPage={ paginateFor.currentPage }
+        totalItems={ paginateFor.totalItems }
+        hasPrev={ paginateFor.hasPrev }
+        hasNext={ paginateFor.hasNext }
+        nextPage={ paginateFor.nextPage }
+        prevPage={ paginateFor.prevPage }
+        totalPages={ paginateFor.totalPages }v
+      />
     </>
   )
 }
