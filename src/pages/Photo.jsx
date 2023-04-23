@@ -11,7 +11,7 @@ const Photo = () => {
     const getPhoto = async () => {
       const element = await photosService().getPhotoById(photo_id)
       const photo = {
-          description: element.description,
+          description: element.description ?? 'There is not description for this image',
           url: element.urls.raw,
           urlDownload: element.urls.full,
           downloads: element.downloads,
@@ -36,9 +36,9 @@ const Photo = () => {
           </div>
           <div className='photo__image_info'>
             <p className='photo__image_description'>
-              { currentPhoto.description ?? 'There is not description for this image' }
+              { currentPhoto.description }
             </p>
-            <a href={ currentPhoto.urlDownload } download='image-1234' target='_blank' className='photo__download_btn' rel="noreferrer">Descargar</a>
+            <a href={ currentPhoto.urlDownload } download target='_blank' className='photo__download_btn' rel="noreferrer">Descargar</a>
           </div>
         </div>
       </div>
